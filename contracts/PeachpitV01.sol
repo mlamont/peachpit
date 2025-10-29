@@ -10,12 +10,12 @@ import {StorageSlot} from "@openzeppelin/contracts/utils/StorageSlot.sol";
 import {ERC721Utils} from "@openzeppelin/contracts/token/ERC721/utils/ERC721Utils.sol";
 
 /**
- * @title Peach
+ * @title Peachpit
  * @author Merrill B. Lamont III (rockopera.eth)
  * @notice Own and name a color. 1 NFT color swatch for each of 16M+ web colors.
  * @dev All on-chain: this NFT is a deed of ownership, but for a digital asset that is contained within the NFT.
  */
-contract PeachV07 is
+contract PeachpitV01 is
     Initializable,
     ERC721Upgradeable,
     OwnableUpgradeable,
@@ -51,7 +51,7 @@ contract PeachV07 is
     }
 
     function initialize(address initialOwner) public initializer {
-        __ERC721_init("Peach", "PCH");
+        __ERC721_init("Peachpit", "PCH");
         __Ownable_init(initialOwner);
         __UUPSUpgradeable_init();
     }
