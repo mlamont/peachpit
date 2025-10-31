@@ -15,7 +15,7 @@ import {ERC721Utils} from "@openzeppelin/contracts/token/ERC721/utils/ERC721Util
  * @notice Own and name a color. 1 NFT color swatch for each of 16M+ web colors.
  * @dev All on-chain: this NFT is a deed of ownership, but for a digital asset that is contained within the NFT.
  */
-contract PeachpitV05 is
+contract PeachpitV06 is
     Initializable,
     ERC721Upgradeable,
     OwnableUpgradeable,
@@ -37,7 +37,7 @@ contract PeachpitV05 is
 
     event UpgradeabilityEnded(address upgradeabilityEnder);
 
-    event Withdrew(uint amount);
+    // event Withdrew(uint amount);
 
     event LogDepositReceived(address sender, uint amount);
 
@@ -161,7 +161,7 @@ contract PeachpitV05 is
         (bool success, ) = owner().call{value: balanceOfThisContract}(""); // call() doesn't require owner() wrapped in payable()
         require(success, "Withdrawal failed.");
         // OLD: payable(owner()).transfer(balanceOfThisContract);
-        emit Withdrew(balanceOfThisContract);
+        // emit Withdrew(balanceOfThisContract);
     }
 
     receive() external payable {
